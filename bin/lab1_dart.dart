@@ -1,4 +1,28 @@
+String greet(String name) {
+  return 'привет, $name';
+}
+int square(int x) => x * x;
+double half(double x) => x / 2;
+void describePet({required String name, String species = 'cat', int age = 0}) {
+  print('$name - $species, age $age');
+}
+
+String repeat(String text, [int times = 2]) {
+  String result = '';
+  for (int i = 0; i < times; i++) {
+    result += text;
+  }
+  return result;
+}
 void main() {
+  print(repeat('HA'));
+  print(repeat('HA', 10));
+  describePet(name: 'barsik', age: 3);
+  describePet(name: 'sharik', species: 'dog');
+  print(square(3));
+  print(half(1.64));
+  print(greet('Artem'));
+  print(greet('Maria'));
   String name = "Ivan";
   int age = 17;
   double height = 1.76;
@@ -34,4 +58,15 @@ void main() {
   Map<String, dynamic> person = {'name': 'Ivan', 'age': 20};
   print(person['name']);
   person['city'] = 'Волжский';
+
+  List<int> numbers = [3, 1, 4, 1, 5, 9];
+  numbers.sort((a, b) => b - a);
+  print(numbers);
+
+  List<String> names = ['Artem', 'Maria', 'Ivan'];
+  List<String> upper = names.map((name) => name.toUpperCase()).toList();
+  print(upper);
+
+  List<String> longNames = names.where((name) => name.length > 4).toList();
+  print(longNames);
 }
