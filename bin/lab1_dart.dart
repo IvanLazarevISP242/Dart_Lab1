@@ -1,9 +1,14 @@
 String greet(String name) {
   return 'привет, $name';
 }
+
 int square(int x) => x * x;
 double half(double x) => x / 2;
-void describePet({required String name, String species = 'cat', int age = 0}) {
+void describePet({
+  required String name,
+  String species = 'cat',
+  int age = 0,
+}) {
   print('$name - $species, age $age');
 }
 
@@ -14,6 +19,7 @@ String repeat(String text, [int times = 2]) {
   }
   return result;
 }
+
 void main() {
   print(repeat('HA'));
   print(repeat('HA', 10));
@@ -50,12 +56,19 @@ void main() {
     print(city.toUpperCase());
   }
 
-  List<String> fruits = ['apple', 'orange', 'melon'];
+  List<String> fruits = [
+    'apple',
+    'orange',
+    'melon',
+  ];
   fruits.add('banana');
   print(fruits[0]);
   print(fruits.length);
 
-  Map<String, dynamic> person = {'name': 'Ivan', 'age': 20};
+  Map<String, dynamic> person = {
+    'name': 'Ivan',
+    'age': 20,
+  };
   print(person['name']);
   person['city'] = 'Волжский';
 
@@ -64,9 +77,61 @@ void main() {
   print(numbers);
 
   List<String> names = ['Artem', 'Maria', 'Ivan'];
-  List<String> upper = names.map((name) => name.toUpperCase()).toList();
+  List<String> upper = names
+      .map((name) => name.toUpperCase())
+      .toList();
   print(upper);
 
-  List<String> longNames = names.where((name) => name.length > 4).toList();
+  List<String> longNames = names
+      .where((name) => name.length > 4)
+      .toList();
   print(longNames);
+
+  int score2 = 85;
+  String grade;
+  if (score2 >= 90) {
+    grade = 'A';
+  } else if (score2 >= 75) {
+    grade = 'B';
+  } else {
+    grade = 'C';
+  }
+  print(grade);
+
+  String result = score >= 60
+      ? 'sdal'
+      : 'ne sdal';
+  print(result);
+
+  for (int i = 0; i < 5; i++) {
+    print(i);
+  }
+
+  List<String> fruits3 = [
+    'yabloko',
+    'banan',
+    'grusha',
+  ];
+  for (var fruit in fruits3) {
+    print(fruit);
+  }
+
+  int n = 0;
+  while (n < 3) {
+    print(n);
+    n++;
+  }
+
+  String day = 'pn';
+  switch (day) {
+    case 'sb':
+    case 'vs':
+      print('holiday');
+      break;
+    case 'pn':
+      print('nachalo nedeli');
+      break;
+    default:
+      print('working day');
+  }
 }
